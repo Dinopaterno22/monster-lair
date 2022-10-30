@@ -26,10 +26,10 @@ class SplashScreenActivity : AppCompatActivity() {
             .asLiveData()
             .observe(this, Observer { migrationRunning ->
                 if (migrationRunning) {
-                    binding.updateIndicator.postDelayed(1000) {
-                        binding.updateIndicator.visibility = View.VISIBLE
-                        binding.updateText.visibility = View.VISIBLE
-                    }
+//                    binding.updateIndicator.postDelayed(1000) {
+//                        binding.updateIndicator.visibility = View.VISIBLE
+//                        binding.updateText.visibility = View.VISIBLE
+//                    }
                 } else {
                     startActivity(
                         MainActivity.intent(this@SplashScreenActivity),

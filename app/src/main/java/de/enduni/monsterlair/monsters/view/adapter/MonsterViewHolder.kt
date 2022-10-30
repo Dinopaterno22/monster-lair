@@ -6,7 +6,7 @@ import android.view.View
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import coil.api.load
+import coil.load
 import de.enduni.monsterlair.R
 import de.enduni.monsterlair.common.*
 import de.enduni.monsterlair.common.domain.Alignment

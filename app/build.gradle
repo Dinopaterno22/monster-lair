@@ -13,16 +13,16 @@ apply plugin: 'com.cookpad.android.licensetools'
 
 android {
 
-    compileSdkVersion 31
+    compileSdkVersion 30
 
-    buildToolsVersion "31.0.0"
+    buildToolsVersion "29.0.2"
 
     defaultConfig {
         applicationId "de.enduni.monsterlair"
         minSdkVersion 24
-        targetSdkVersion 31
-        versionCode 18
-        versionName "2.7"
+        targetSdkVersion 30
+        versionCode 17
+        versionName "2.61"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         javaCompileOptions {
@@ -95,7 +95,8 @@ dependencies {
 
     // ViewModel and LiveData
     def lifecycle_version = "2.3.1"
-    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
+//    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-reactivestreams-ktx:$lifecycle_version"
     kapt "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"

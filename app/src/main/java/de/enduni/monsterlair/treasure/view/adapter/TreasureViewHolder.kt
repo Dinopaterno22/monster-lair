@@ -3,7 +3,7 @@ package de.enduni.monsterlair.treasure.view.adapter
 import android.net.Uri
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
-import coil.api.load
+import coil.load
 import de.enduni.monsterlair.R
 import de.enduni.monsterlair.common.collapse
 import de.enduni.monsterlair.common.domain.Rarity

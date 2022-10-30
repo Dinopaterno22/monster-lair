@@ -1,7 +1,7 @@
 package de.enduni.monsterlair.creator.view.adapter
 
 import android.view.View
-import coil.api.load
+import coil.load
 import de.enduni.monsterlair.R
 import de.enduni.monsterlair.common.collapse
 import de.enduni.monsterlair.common.domain.Rarity

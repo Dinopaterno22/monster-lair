@@ -305,7 +305,7 @@
     <string name="source_custom">Custom</string>
 
 
-    <string name="empty_encounter_text">Looks like you do not have any encounters, let\'s get started!</string>
+    <string name="empty_encounter_text">Looks like you do not have any encounters, let\'s get started! \n E se fosses para o caralho?</string>
     <string name="empty_monster_text">There are no monsters that fit your filters.\nTry to define looser criteria.</string>
     <string name="empty_hazard_text">There are no hazards that fit your filters.\nTry to define looser criteria.</string>
     <string name="empty_treasure_text">There are is no treasure that fits your filter settings.\nTry to define looser criteria.</string>
