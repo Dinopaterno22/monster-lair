@@ -5,6 +5,8 @@ import de.enduni.monsterlair.common.datasource.hazard.HazardAssetDataSource
 import de.enduni.monsterlair.common.datasource.hazard.HazardDataSource
 import de.enduni.monsterlair.common.datasource.monsters.MonsterAssetDataSource
 import de.enduni.monsterlair.common.datasource.monsters.MonsterDataSource
+import de.enduni.monsterlair.common.datasource.statblocks.StatblockAssetDatasource
+import de.enduni.monsterlair.common.datasource.statblocks.StatblockDataSource
 import de.enduni.monsterlair.common.datasource.treasure.TreasureAssetDataSource
 import de.enduni.monsterlair.common.datasource.treasure.TreasureDataSource
 import de.enduni.monsterlair.common.persistence.database.DatabaseInitializer
@@ -39,6 +41,7 @@ import de.enduni.monsterlair.monsters.view.MonsterFilterStore
 import de.enduni.monsterlair.monsters.view.MonsterFilterViewModel
 import de.enduni.monsterlair.monsters.view.MonsterListDisplayModelMapper
 import de.enduni.monsterlair.monsters.view.MonsterViewModel
+import de.enduni.monsterlair.statblocks.persistence.StatblockEntityMapper
 import de.enduni.monsterlair.settings.SettingsViewModel
 import de.enduni.monsterlair.treasure.domain.CreateRandomTreasureTextUseCase
 import de.enduni.monsterlair.treasure.domain.CreateRandomTreasureUseCase
@@ -61,6 +64,11 @@ val databaseModule = module(createdAtStart = true) {
             androidApplication()
         )
     }
+    single<StatblockDataSource> {
+        StatblockAssetDatasource(
+            androidApplication()
+        )
+    }
     single<HazardDataSource> {
         HazardAssetDataSource(
             androidApplication()
@@ -73,11 +81,15 @@ val databaseModule = module(createdAtStart = true) {
     }
     single(createdAtStart = true) { MonsterDatabase.buildDatabase(androidApplication()) }
     single { get<MonsterDatabase>().monsterDao() }
+    single { get<MonsterDatabase>().statblockDao() }
     single { get<MonsterDatabase>().encounterDao() }
     single { get<MonsterDatabase>().hazardDao() }
     single { get<MonsterDatabase>().treasureDao() }
     single {
         DatabaseInitializer(
+            get(),
+            get(),
+            get(),
             get(),
             get(),
             get(),
@@ -147,6 +159,13 @@ val monsterModule = module {
     viewModel { MonsterViewModel(get(), get(), get(), get(), get(), get()) }
     viewModel { MonsterFilterViewModel(get(), get()) }
     viewModel { CreateMonsterViewModel(get(), get(), get(), get()) }
+}
+
+//TODO: Statblock Module
+val statblockModule = module {
+
+    // data source
+    single { StatblockEntityMapper() }
 }
 
 val encounterModule = module {

@@ -2,7 +2,7 @@ package de.enduni.monsterlair.monsters.domain
 
 import de.enduni.monsterlair.common.domain.*
 
-data class Monster_Statblock(
+data class Statblock(
     val id: String,
     val name: String,
     val level: Int,
@@ -20,6 +20,6 @@ data class Monster_Statblock(
 //    val abilities: List<>,
     val ac: Int,
     val savingThrows: List<Int>,
-    val hp: Int,
+    val hp: Int
 )
 

@@ -1,0 +1,142 @@
+[
+  {
+    "name": "Kobold Scout",
+    "isNpc": false,
+    "source": "B1",
+    "page": 213,
+    "level": 1,
+    "traits": [
+      "le",
+      "small",
+      "humanoid",
+      "kobold"
+    ],
+    "perception": {
+      "std": 8
+    },
+    "senses": [
+      {
+        "name": "darkvision"
+      }
+    ],
+    "languages": {
+      "languages": [
+        "common",
+        "draconic"
+      ]
+    },
+    "skills": {
+      "acrobatics": {
+        "std": 7
+      },
+      "crafting": {
+        "std": 3,
+        "traps": 5
+      },
+      "nature": {
+        "std": 6
+      },
+      "stealth": {
+        "std": 7
+      },
+      "survival": {
+        "std": 6
+      }
+    },
+    "abilityMods": {
+      "str": 0,
+      "dex": 4,
+      "con": 1,
+      "int": 0,
+      "wis": 3,
+      "cha": 1
+    },
+    "items": [
+      "crossbow (20 bolts)",
+      "leather armor",
+      "{@item shortsword}",
+      "snare kit"
+    ],
+    "speed": {
+      "walk": 25
+    },
+    "attacks": [
+      {
+        "range": "Melee",
+        "name": "shortsword",
+        "attack": 9,
+        "traits": [
+          "agile",
+          "finesse",
+          "versatile s"
+        ],
+        "effects": [],
+        "damage": "{@damage 1d6} piercing",
+        "types": [
+          "piercing"
+        ]
+      },
+      {
+        "range": "Ranged",
+        "name": "crossbow",
+        "attack": 9,
+        "traits": [
+          "range increment 120 feet",
+          "reload 1"
+        ],
+        "effects": [],
+        "damage": "{@damage 1d8} piercing",
+        "types": [
+          "piercing"
+        ]
+      }
+    ],
+    "abilities": {
+      "bot": [
+        {
+          "activity": {
+            "number": 1,
+            "unit": "action"
+          },
+          "entries": [
+            "The kobold warrior {@action Stride||Strides} up to its Speed plus 5 feet and gains a +2 circumstance bonus to AC against reactions triggered by this movement. It must end this movement in a space that's not adjacent to any enemy."
+          ],
+          "name": "Hurried Retreat",
+          "requirements": "The kobold warrior is adjacent to at least one enemy."
+        },
+        {
+          "entries": [
+            "The kobold scout deals an extra {@damage 1d6} precision damage to {@condition flat-footed} creatures."
+          ],
+          "name": "Sneak Attack",
+          "generic": {
+            "tag": "ability"
+          }
+        }
+      ]
+    },
+    "hasImages": true,
+    "defenses": {
+      "ac": {
+        "std": 18
+      },
+      "savingThrows": {
+        "fort": {
+          "std": 5
+        },
+        "ref": {
+          "std": 9
+        },
+        "will": {
+          "std": 6
+        }
+      },
+      "hp": [
+        {
+          "hp": 16,
+          "abilities": null
+        }
+      ]
+    }
+  }
+]

@@ -6,10 +6,13 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import de.enduni.monsterlair.common.persistence.*
 
+
+//TODO: Adicionar merdas do statblock aqui
 @Database(
     entities = [
         HazardEntity::class,
         MonsterEntity::class,
+        StatblockEntity::class,
         TreasureEntity::class,
         EncounterEntity::class,
         MonsterTrait::class,
@@ -20,11 +23,13 @@ import de.enduni.monsterlair.common.persistence.*
         TreasureAndTraitsCrossRef::class,
         MonsterForEncounterEntity::class,
         HazardForEncounterEntity::class],
-    version = 3
+    version = 4
 )
 abstract class MonsterDatabase : RoomDatabase() {
 
     abstract fun monsterDao(): MonsterDao
+
+    abstract fun statblockDao(): StatblockDao
 
     abstract fun encounterDao(): EncounterDao
 
@@ -42,6 +47,7 @@ abstract class MonsterDatabase : RoomDatabase() {
                 Room.databaseBuilder(context, MonsterDatabase::class.java, "MonsterDatabase")
                     .addMigrations(IdentifierMigration(context))
                     .addMigrations(DescriptionMigration())
+                    .addMigrations(StatblockMigration(context))
                     .build()
             }
         }

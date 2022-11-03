@@ -4,10 +4,14 @@ import de.enduni.monsterlair.common.datasource.hazard.HazardDataSource
 import de.enduni.monsterlair.common.datasource.hazard.HazardDto
 import de.enduni.monsterlair.common.datasource.monsters.MonsterDataSource
 import de.enduni.monsterlair.common.datasource.monsters.MonsterDto
+import de.enduni.monsterlair.common.datasource.statblocks.StatblockDataSource
+import de.enduni.monsterlair.common.datasource.statblocks.StatblockDto
 import de.enduni.monsterlair.common.datasource.treasure.TreasureDataSource
 import de.enduni.monsterlair.common.datasource.treasure.TreasureDto
 import de.enduni.monsterlair.common.persistence.*
+import de.enduni.monsterlair.monsters.domain.Statblock
 import de.enduni.monsterlair.monsters.persistence.MonsterEntityMapper
+import de.enduni.monsterlair.statblocks.persistence.StatblockEntityMapper
 import de.enduni.monsterlair.treasure.repository.TreasureEntityMapper
 import de.enduni.monsterlair.update.UpdateManager
 import kotlinx.coroutines.Dispatchers
@@ -19,6 +23,9 @@ class DatabaseInitializer(
     private val monsterEntityMapper: MonsterEntityMapper,
     private val monsterDao: MonsterDao,
     private val monsterDataSource: MonsterDataSource,
+    private val statblockEntityMapper: StatblockEntityMapper,
+    private val statblockDao: StatblockDao,
+    private val statblockDataSource: StatblockDataSource,
     private val hazardDataSource: HazardDataSource,
     private val hazardEntityMapper: HazardEntityMapper,
     private val hazardDao: HazardDao,
@@ -41,6 +48,8 @@ class DatabaseInitializer(
         if (savedVersion < 18) {
             monsterDataSource.getMonsters().insertMonsters()
         }
+        statblockDataSource.getStatblocks().insertStatblocks()
+
 
         _migrationRunning.value = false
     }
@@ -58,6 +67,14 @@ class DatabaseInitializer(
                 })
             }
     }
+
+    private suspend fun List<StatblockDto>.insertStatblocks() {
+        this.forEach {
+                statblockDao.insertStatblock(statblockEntityMapper.fromDtoToEntity(it))
+            }
+    }
+
+
 
     private suspend fun List<HazardDto>.saveHazards() {
         this.map { hazardEntityMapper.fromDtoToEntity(it) }

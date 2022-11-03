@@ -38,6 +38,7 @@ class MonsterLairApplication : Application() {
                     databaseModule,
                     hazardsModule,
                     monsterModule,
+                    statblockModule,
                     encounterModule,
                     treasureModule,
                     appModule

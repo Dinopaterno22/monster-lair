@@ -85,6 +85,7 @@ class IdentifierMigration(private val context: Context) : Migration(1, 2) {
 
     }
 
+
     private fun moveNewHazardTable(database: SupportSQLiteDatabase) {
         database.execSQL("Drop table hazards")
         database.execSQL("Drop table hazards_for_encounters")
