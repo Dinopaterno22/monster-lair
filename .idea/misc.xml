@@ -4,6 +4,20 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Projects/monster-lair/app/src/main/res/layout/activity_splashscreen.xml" value="0.16" />
+        <entry key="..\:/Users/Joao/Documents/Projects/monster-lair/app/src/main/res/layout/activity_encounter_creator.xml" value="0.16767983789260385" />
+        <entry key="..\:/Users/Joao/Documents/Projects/monster-lair/app/src/main/res/layout/activity_encounter_export.xml" value="0.16767983789260385" />
+        <entry key="..\:/Users/Joao/Documents/Projects/monster-lair/app/src/main/res/layout/activity_licenses.xml" value="0.16767983789260385" />
+        <entry key="..\:/Users/Joao/Documents/Projects/monster-lair/app/src/main/res/layout/activity_main.xml" value="0.5" />
+        <entry key="..\:/Users/Joao/Documents/Projects/monster-lair/app/src/main/res/layout/activity_splashscreen.xml" value="0.16767983789260385" />
+        <entry key="..\:/Users/Joao/Documents/Projects/monster-lair/app/src/main/res/layout/bottomsheet_danger_types.xml" value="0.16767983789260385" />
+        <entry key="..\:/Users/Joao/Documents/Projects/monster-lair/app/src/main/res/layout/bottomsheet_monsters.xml" value="0.22" />
+        <entry key="..\:/Users/Joao/Documents/Projects/monster-lair/app/src/main/res/layout/fragment_monster.xml" value="0.1" />
+        <entry key="..\:/Users/Joao/Documents/Projects/monster-lair/app/src/main/res/layout/trait.xml" value="0.16767983789260385" />
+        <entry key="..\:/Users/Joao/Documents/Projects/monster-lair/app/src/main/res/layout/view_spinner_item.xml" value="0.16767983789260385" />
+        <entry key="..\:/Users/Joao/Documents/Projects/monster-lair/app/src/main/res/layout/viewholder_monster.xml" value="0.75" />
+        <entry key="..\:/Users/Joao/Documents/Projects/monster-lair/app/src/main/res/layout/viewholder_treasure.xml" value="0.16767983789260385" />
+        <entry key="..\:/Users/Joao/Documents/Projects/monster-lair/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1785" />
+        <entry key="..\:/Users/Joao/Documents/Projects/monster-lair/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1785" />
         <entry key="monsterlairwearos/src/main/res/layout/activity_main.xml" value="0.1608108108108108" />
       </map>
     </option>

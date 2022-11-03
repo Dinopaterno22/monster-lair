@@ -182,6 +182,15 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/description" />
 
+        <Button
+            android:id="@+id/statblock_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/monster_statblock"
+            android:layout_marginStart="@dimen/list_item_margin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/description"/>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
