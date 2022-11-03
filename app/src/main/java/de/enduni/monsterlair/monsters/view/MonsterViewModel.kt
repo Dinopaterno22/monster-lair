@@ -1,9 +1,11 @@
 package de.enduni.monsterlair.monsters.view
 
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.lifecycle.*
 import de.enduni.monsterlair.common.view.ActionLiveData
 import de.enduni.monsterlair.monsters.domain.*
 import de.enduni.monsterlair.monsters.view.adapter.MonsterViewHolder
+import de.enduni.monsterlair.statblocks.StatblockActivity
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -47,6 +49,12 @@ class MonsterViewModel(
         }
     }
 
+    override fun onStatblockClicked(monsterId: String){
+        viewModelScope.launch(handler){
+//            val monster = retrieveMonsterUseCase.execute(monsterId)
+            _actions.sendAction(MonsterOverviewAction.OnStatblockClicked(monsterId))
+        }
+    }
 
     private fun List<Monster>.toDisplayModel(): List<MonsterListDisplayModel> {
         return this.map { mapper.toMonsterDisplayModel(it) }

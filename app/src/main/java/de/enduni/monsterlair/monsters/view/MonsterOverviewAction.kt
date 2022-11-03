@@ -7,5 +7,5 @@ sealed class MonsterOverviewAction {
     class OnMonsterLinkClicked(val url: String) : MonsterOverviewAction()
     class OnEditCustomMonsterClicked(val monster: Monster) : MonsterOverviewAction()
     class OnDeleteCustomMonsterClicked(val monster: Monster) : MonsterOverviewAction()
-
+    class OnStatblockClicked(val monster: String) : MonsterOverviewAction()
 }

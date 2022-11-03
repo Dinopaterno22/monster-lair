@@ -9,12 +9,15 @@
         <entry key="..\:/Users/Joao/Documents/Projects/monster-lair/app/src/main/res/layout/activity_licenses.xml" value="0.16767983789260385" />
         <entry key="..\:/Users/Joao/Documents/Projects/monster-lair/app/src/main/res/layout/activity_main.xml" value="0.5" />
         <entry key="..\:/Users/Joao/Documents/Projects/monster-lair/app/src/main/res/layout/activity_splashscreen.xml" value="0.16767983789260385" />
+        <entry key="..\:/Users/Joao/Documents/Projects/monster-lair/app/src/main/res/layout/activity_statblock.xml" value="0.18" />
         <entry key="..\:/Users/Joao/Documents/Projects/monster-lair/app/src/main/res/layout/bottomsheet_danger_types.xml" value="0.16767983789260385" />
         <entry key="..\:/Users/Joao/Documents/Projects/monster-lair/app/src/main/res/layout/bottomsheet_monsters.xml" value="0.22" />
-        <entry key="..\:/Users/Joao/Documents/Projects/monster-lair/app/src/main/res/layout/fragment_monster.xml" value="0.1" />
+        <entry key="..\:/Users/Joao/Documents/Projects/monster-lair/app/src/main/res/layout/fragment_encounters.xml" value="0.34479166666666666" />
+        <entry key="..\:/Users/Joao/Documents/Projects/monster-lair/app/src/main/res/layout/fragment_monster.xml" value="0.33" />
+        <entry key="..\:/Users/Joao/Documents/Projects/monster-lair/app/src/main/res/layout/fragment_settings.xml" value="0.1574074074074074" />
         <entry key="..\:/Users/Joao/Documents/Projects/monster-lair/app/src/main/res/layout/trait.xml" value="0.16767983789260385" />
         <entry key="..\:/Users/Joao/Documents/Projects/monster-lair/app/src/main/res/layout/view_spinner_item.xml" value="0.16767983789260385" />
-        <entry key="..\:/Users/Joao/Documents/Projects/monster-lair/app/src/main/res/layout/viewholder_monster.xml" value="0.75" />
+        <entry key="..\:/Users/Joao/Documents/Projects/monster-lair/app/src/main/res/layout/viewholder_monster.xml" value="0.6692913385826772" />
         <entry key="..\:/Users/Joao/Documents/Projects/monster-lair/app/src/main/res/layout/viewholder_treasure.xml" value="0.16767983789260385" />
         <entry key="..\:/Users/Joao/Documents/Projects/monster-lair/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1785" />
         <entry key="..\:/Users/Joao/Documents/Projects/monster-lair/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1785" />

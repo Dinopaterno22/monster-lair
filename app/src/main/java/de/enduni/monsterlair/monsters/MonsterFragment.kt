@@ -15,6 +15,7 @@ import de.enduni.monsterlair.monsters.domain.MonsterFilter
 import de.enduni.monsterlair.monsters.view.MonsterOverviewAction
 import de.enduni.monsterlair.monsters.view.MonsterViewModel
 import de.enduni.monsterlair.monsters.view.adapter.MonsterListAdapter
+import de.enduni.monsterlair.statblocks.StatblockActivity
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import timber.log.Timber
@@ -38,7 +39,9 @@ class MonsterFragment : Fragment(R.layout.fragment_monster) {
             binding.emptyLayout.visibility = if (it.isEmpty()) View.VISIBLE else View.GONE
             binding.monsterRecyclerView.visibility = if (it.isEmpty()) View.GONE else View.VISIBLE
             listAdapter.submitList(it)
+
         })
+
         viewModel.filter.observe(viewLifecycleOwner, Observer { update(it) })
         bindUi()
     }
@@ -103,6 +106,14 @@ class MonsterFragment : Fragment(R.layout.fragment_monster) {
                     viewModel.onDeleteConfirmed(monsterId = action.monster.id)
                 }.show()
             }
+            //TODO: Código para trocar a dita view
+            is MonsterOverviewAction.OnStatblockClicked -> {
+                val intent = StatblockActivity.intent(
+                    context = requireContext(),
+                    name = action.monster
+                )
+                requireActivity().startActivity(intent)
+            }
             else -> Timber.d("Processed $action")
         }
     }
@@ -128,5 +139,4 @@ class MonsterFragment : Fragment(R.layout.fragment_monster) {
         super.onPause()
         viewModel.actions.removeObservers(this)
     }
-
 }

@@ -89,6 +89,9 @@ class MonsterViewHolder(
             binding.archivesButton.setOnClickListener {
                 monsterSelectedListener.onOpenArchive(monsterId = monster.id)
             }
+            binding.statblockButton.setOnClickListener{
+                monsterSelectedListener.onStatblockClicked(name = monster.name)
+            }
         }
     }
 
@@ -99,6 +102,7 @@ class MonsterViewHolder(
         fun onOpenArchive(monsterId: String)
         fun onEditClicked(monsterId: String)
         fun onDeleteClicked(monsterId: String)
+        fun onStatblockClicked(name: String)
     }
 
 }
