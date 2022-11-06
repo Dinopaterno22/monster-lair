@@ -43,6 +43,9 @@ import de.enduni.monsterlair.monsters.view.MonsterListDisplayModelMapper
 import de.enduni.monsterlair.monsters.view.MonsterViewModel
 import de.enduni.monsterlair.statblocks.persistence.StatblockEntityMapper
 import de.enduni.monsterlair.settings.SettingsViewModel
+import de.enduni.monsterlair.statblocks.domain.RetrieveStatblockUseCase
+import de.enduni.monsterlair.statblocks.persistence.StatblockRepository
+import de.enduni.monsterlair.statblocks.view.StatblockViewModel
 import de.enduni.monsterlair.treasure.domain.CreateRandomTreasureTextUseCase
 import de.enduni.monsterlair.treasure.domain.CreateRandomTreasureUseCase
 import de.enduni.monsterlair.treasure.domain.CreateTreasureRecommendationUseCase
@@ -161,11 +164,20 @@ val monsterModule = module {
     viewModel { CreateMonsterViewModel(get(), get(), get(), get()) }
 }
 
-//TODO: Statblock Module
+// TODO: Statblock Module
 val statblockModule = module {
 
     // data source
     single { StatblockEntityMapper() }
+
+    // domain
+    single {RetrieveStatblockUseCase(get())}
+
+    // persistence
+    single { StatblockRepository(get(), get())}
+
+    // view
+    viewModel { StatblockViewModel(get(), get()) }
 }
 
 val encounterModule = module {

@@ -6,6 +6,7 @@ import de.enduni.monsterlair.common.view.ActionLiveData
 import de.enduni.monsterlair.monsters.domain.*
 import de.enduni.monsterlair.monsters.view.adapter.MonsterViewHolder
 import de.enduni.monsterlair.statblocks.StatblockActivity
+import de.enduni.monsterlair.statblocks.domain.RetrieveStatblockUseCase
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -41,7 +42,6 @@ class MonsterViewModel(
 
     val filter = filterStore.filter.asLiveData()
 
-
     override fun onOpenArchive(monsterId: String) {
         viewModelScope.launch(handler) {
             val url = retrieveMonsterUseCase.execute(monsterId).url
@@ -49,10 +49,9 @@ class MonsterViewModel(
         }
     }
 
-    override fun onStatblockClicked(monsterId: String){
+    override fun onStatblockClicked(name: String){
         viewModelScope.launch(handler){
-//            val monster = retrieveMonsterUseCase.execute(monsterId)
-            _actions.sendAction(MonsterOverviewAction.OnStatblockClicked(monsterId))
+            _actions.sendAction(MonsterOverviewAction.OnStatblockClicked(name))
         }
     }
 

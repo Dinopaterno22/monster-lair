@@ -9,7 +9,6 @@ import de.enduni.monsterlair.common.datasource.statblocks.StatblockDto
 import de.enduni.monsterlair.common.datasource.treasure.TreasureDataSource
 import de.enduni.monsterlair.common.datasource.treasure.TreasureDto
 import de.enduni.monsterlair.common.persistence.*
-import de.enduni.monsterlair.monsters.domain.Statblock
 import de.enduni.monsterlair.monsters.persistence.MonsterEntityMapper
 import de.enduni.monsterlair.statblocks.persistence.StatblockEntityMapper
 import de.enduni.monsterlair.treasure.repository.TreasureEntityMapper
@@ -18,6 +17,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.withContext
+import timber.log.Timber
 
 class DatabaseInitializer(
     private val monsterEntityMapper: MonsterEntityMapper,
@@ -71,6 +71,8 @@ class DatabaseInitializer(
     private suspend fun List<StatblockDto>.insertStatblocks() {
         this.forEach {
                 statblockDao.insertStatblock(statblockEntityMapper.fromDtoToEntity(it))
+                // TODO: Clean Timber reference
+                Timber.v("Inserting $it into database.")
             }
     }
 
