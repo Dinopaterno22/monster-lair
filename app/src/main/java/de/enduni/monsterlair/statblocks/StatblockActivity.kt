@@ -36,7 +36,7 @@ class StatblockActivity() : AppCompatActivity() {
 
     private fun updateUI(statblock: Statblock) {
         Timber.d("Using ${statblock.name} in the activity")
-        binding.toolbar.title = statblock.name
+        binding.toolbar.title = statblock.name + " (" + statblock.level + ")"
     }
 
     private fun handleAction(action: StatblockOverviewAction?){

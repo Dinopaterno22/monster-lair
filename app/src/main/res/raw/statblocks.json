@@ -332,5 +332,211 @@
         }
       ]
     }
+  },
+  {
+    "name": "Kolyarut",
+    "isNpc": false,
+    "source": "B1",
+    "page": 10,
+    "level": 12,
+    "traits": [
+      "ln",
+      "medium",
+      "aeon",
+      "inevitable",
+      "monitor"
+    ],
+    "perception": {
+      "std": 23,
+      "to detect lies": 27
+    },
+    "senses": [
+      {
+        "name": "darkvision"
+      }
+    ],
+    "languages": {
+      "languages": [
+        "celestial",
+        "infernal",
+        "utopian"
+      ],
+      "abilities": [
+        "truespeech"
+      ]
+    },
+    "skills": {
+      "acrobatics": {
+        "std": 22
+      },
+      "athletics": {
+        "std": 27
+      },
+      "deception": {
+        "std": 20
+      },
+      "diplomacy": {
+        "std": 20
+      },
+      "survival": {
+        "std": 22
+      },
+      "axis lore": {
+        "std": 22
+      }
+    },
+    "abilityMods": {
+      "str": 7,
+      "dex": 4,
+      "con": 5,
+      "int": 1,
+      "wis": 4,
+      "cha": 2
+    },
+    "items": [
+      "+1 striking bastard sword"
+    ],
+    "speed": {
+      "walk": 25
+    },
+    "attacks": [
+      {
+        "range": "Melee",
+        "name": "bastard sword",
+        "attack": 26,
+        "traits": [
+          "lawful",
+          "magical",
+          "two-hand d12"
+        ],
+        "effects": [],
+        "damage": "{@damage 2d8+13} slashing plus {@damage 1d6} lawful",
+        "types": [
+          "lawful",
+          "slashing"
+        ]
+      },
+      {
+        "range": "Melee",
+        "name": "fist",
+        "attack": 23,
+        "traits": [
+          "agile",
+          "lawful",
+          "magical"
+        ],
+        "effects": [],
+        "damage": "{@damage 1d10+11} bludgeoning plus {@damage 1d6} lawful",
+        "types": [
+          "bludgeoning",
+          "lawful"
+        ]
+      }
+    ],
+    "spellcasting": [
+      {
+        "name": "Divine Innate",
+        "type": "Innate",
+        "tradition": "Divine",
+        "DC": 32,
+        "entry": {
+          "1": {
+            "spells": [
+              {
+                "name": "command",
+                "amount": "at will"
+              }
+            ]
+          },
+          "2": {
+            "spells": [
+              {
+                "name": "invisibility",
+                "notes": [
+                  "self only"
+                ]
+              }
+            ]
+          },
+          "3": {
+            "spells": [
+              {
+                "name": "paralyze",
+                "amount": 2
+              }
+            ]
+          },
+          "4": {
+            "spells": [
+              {
+                "name": "illusory disguise",
+                "amount": "at will"
+              },
+              {
+                "name": "suggestion",
+                "amount": 2
+              }
+            ]
+          },
+          "5": {
+            "spells": [
+              {
+                "name": "command"
+              }
+            ]
+          },
+          "8": {
+            "spells": [
+              {
+                "name": "discern location"
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "abilities": {
+      "top": [
+        {
+          "entries": [
+            "A kolyarut can speak with and understand any creature that has a language.",
+            "Items +1 striking bastard sword."
+          ],
+          "name": "Truespeech"
+        }
+      ]
+    },
+    "hasImages": true,
+    "defenses": {
+      "ac": {
+        "std": 34
+      },
+      "savingThrows": {
+        "fort": {
+          "std": 23
+        },
+        "ref": {
+          "std": 24
+        },
+        "will": {
+          "std": 22
+        }
+      },
+      "hp": [
+        {
+          "hp": 215,
+          "abilities": [
+            "{@ability regeneration} 15 (deactivated by chaotic)"
+          ]
+        }
+      ],
+      "immunities": [
+        "poison",
+        "death effects",
+        "disease",
+        "emotion",
+        "unconscious"
+      ]
+    }
   }
 ]

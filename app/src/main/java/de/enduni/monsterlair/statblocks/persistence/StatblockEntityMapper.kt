@@ -18,10 +18,8 @@ import timber.log.Timber
 class StatblockEntityMapper {
     fun fromDtoToEntity(dto: StatblockDto): StatblockEntity {
         val entity = StatblockEntity(
-//            id = dto.id,
-            name = dto.name
-//            url = dto.url,
-//            level = dto.level,
+            name = dto.name,
+            level = dto.level
 //            complexity = dto.complexity,
 //            rarity = dto.rarity,
 //            source = dto.source,

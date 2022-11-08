@@ -6,11 +6,8 @@ import de.enduni.monsterlair.common.domain.*
 
 @JsonClass(generateAdapter = true)
 data class StatblockDto(
-//        @Json(name = "id") val id: String,
-        @Json(name = "name") val name: String
-//        @Json(name = "aonUrl") val url: String,
-//        @Json(name = "family") val family: String,
-//        @Json(name = "level") val level: Int,
+        @Json(name = "name") val name: String,
+        @Json(name = "level") val level: Int
 //        @Json(name = "alignment") val alignment: Alignment,
 //        @Json(name = "type") val type: MonsterType,
 //        @Json(name = "size") val size: Size,

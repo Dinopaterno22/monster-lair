@@ -50,7 +50,6 @@ class DatabaseInitializer(
         }
         statblockDataSource.getStatblocks().insertStatblocks()
 
-
         _migrationRunning.value = false
     }
 
@@ -72,7 +71,7 @@ class DatabaseInitializer(
         this.forEach {
                 statblockDao.insertStatblock(statblockEntityMapper.fromDtoToEntity(it))
                 // TODO: Clean Timber reference
-                Timber.v("Inserting $it into database.")
+                Timber.v("Inserting ${it.name} into database.")
             }
     }
 

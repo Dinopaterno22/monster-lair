@@ -28,12 +28,10 @@ class StatblockViewModel(
         Timber.e(exception, "Caught exception")
     }
 
-    var statblock = Statblock("")
-
     fun updateStatblock(name: String) {
         Timber.d("Querying database for ${name}.")
         viewModelScope.launch(handler) {
-            statblock = retrieveStatblockUseCase.execute(name)
+            val statblock = retrieveStatblockUseCase.execute(name)
             Timber.d("Result: ${statblock.name}")
             _actions.sendAction(StatblockOverviewAction.OnStatblockUpdated(statblock))
         }

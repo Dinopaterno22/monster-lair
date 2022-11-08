@@ -3,12 +3,11 @@ package de.enduni.monsterlair.statblocks.domain
 import de.enduni.monsterlair.common.domain.*
 
 data class Statblock(
-//    val id: String,
-    val name: String
-//    val level: Int,
-//    val alignment: Alignment,
+    val id: String,
+    val name: String,
+    val level: Int
 //    val traits: List<String>,
-//    val perception: Int,
+//    val perception: List<Pair<String, Int>>
 //    val senses: List<String>,
 //    val languages: List<String>,
 //    val Skills: List<>
